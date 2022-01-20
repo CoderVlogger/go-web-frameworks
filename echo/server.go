@@ -6,8 +6,13 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
+var (
+	entityStorage EntityRepository = NewEntityMemoryRepository()
+)
+
 func main() {
 	app := echo.New()
+	entityStorage.Init()
 
 	app.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello, World!")
@@ -20,16 +25,9 @@ func main() {
 }
 
 func listEntities(ctx echo.Context) error {
-	entities := []Entity{
-		{"1", PersonEntityType, "John Doe", "John Doe is a person"},
-		{"2", CompanyEntityType, "Google", "Google is a company"},
-		{"3", PlaceEntityType, "New York", "New York is a place"},
-		{"4", BookEntityType, "The Hitchhiker's Guide to the Galaxy", "The Hitchhiker's Guide to the Galaxy is a book"},
-		{"5", MovieEntityType, "Star Wars", "Star Wars is a movie"},
-		{"6", TvSeriesEntityType, "Game of Thrones", "Game of Thrones is a tv series"},
-		{"7", GameEntityType, "Minecraft", "Minecraft is a game"},
-		{"8", AlbumEntityType, "The Beatles", "The Beatles is an album"},
-		{"9", SongEntityType, "Yesterday", "Yesterday is a song"},
+	entities, err := entityStorage.List()
+	if err != nil {
+		return ctx.JSON(http.StatusInternalServerError, ErrorResponse{Message: err.Error()})
 	}
 
 	return ctx.JSON(http.StatusOK, entities)
@@ -38,11 +36,13 @@ func listEntities(ctx echo.Context) error {
 func getEntity(ctx echo.Context) error {
 	entityID := ctx.Param("id")
 
-	entity := Entity{
-		ID:          entityID,
-		Type:        UknownEntityType,
-		Name:        "Unknown",
-		Description: "Unknown",
+	entity, err := entityStorage.Get(entityID)
+	if err != nil {
+		return ctx.JSON(http.StatusNotFound, ErrorResponse{Message: err.Error()})
+	}
+
+	if entity == nil {
+		return ctx.JSON(http.StatusNotFound, ErrorResponse{Message: "entity not found"})
 	}
 
 	return ctx.JSON(http.StatusOK, entity)

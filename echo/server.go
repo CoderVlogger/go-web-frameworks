@@ -1,51 +1,49 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
-	"strconv"
 
 	"github.com/labstack/echo/v4"
 )
 
-type ServerError struct {
-	Message string `json:"message"`
-}
-
-type User struct {
-	ID       int    `json:"id"`
-	Username string `json:"username"`
-	Bio      string `json:"bio"`
-}
-
 func main() {
-	e := echo.New()
-	e.GET("/", func(c echo.Context) error {
+	app := echo.New()
+
+	app.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello, World!")
 	})
 
-	e.GET("/users/:id", getUser)
-	// e.POST("/users", saveUser)
-	// e.PUT("/users/:id", updateUser)
-	// e.DELETE("/users/:id", deleteUser)
+	app.GET("/entities", listEntities)
+	app.GET("/entities/:id", getEntity)
 
-	e.Logger.Fatal(e.Start(":8080"))
+	app.Logger.Fatal(app.Start(":8080"))
 }
 
-// e.GET("/users/:id", getUser)
-func getUser(c echo.Context) error {
-	id := c.Param("id")
-
-	userID, err := strconv.Atoi(id)
-	if err != nil {
-		return c.JSON(http.StatusInternalServerError, ServerError{"incorrect user ID"})
+func listEntities(ctx echo.Context) error {
+	entities := []Entity{
+		{"1", PersonEntityType, "John Doe", "John Doe is a person"},
+		{"2", CompanyEntityType, "Google", "Google is a company"},
+		{"3", PlaceEntityType, "New York", "New York is a place"},
+		{"4", BookEntityType, "The Hitchhiker's Guide to the Galaxy", "The Hitchhiker's Guide to the Galaxy is a book"},
+		{"5", MovieEntityType, "Star Wars", "Star Wars is a movie"},
+		{"6", TvSeriesEntityType, "Game of Thrones", "Game of Thrones is a tv series"},
+		{"7", GameEntityType, "Minecraft", "Minecraft is a game"},
+		{"8", AlbumEntityType, "The Beatles", "The Beatles is an album"},
+		{"9", SongEntityType, "Yesterday", "Yesterday is a song"},
 	}
 
-	user := User{
-		ID:       userID,
-		Username: fmt.Sprintf("username-%s", id),
-		Bio:      fmt.Sprintf("bio-%s", id),
+	return ctx.JSON(http.StatusOK, entities)
+}
+
+func getEntity(ctx echo.Context) error {
+	entityID := ctx.Param("id")
+
+	entity := Entity{
+		ID:          entityID,
+		Type:        UknownEntityType,
+		Name:        "Unknown",
+		Description: "Unknown",
 	}
 
-	return c.JSON(http.StatusOK, user)
+	return ctx.JSON(http.StatusOK, entity)
 }

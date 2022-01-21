@@ -2,10 +2,13 @@ module demoapp
 
 go 1.17
 
+replace github.com/CoderVlogger/go-web-frameworks/pkg => ../pkg
+
 require (
 	github.com/BurntSushi/toml v0.4.1 // indirect
 	github.com/CloudyKit/fastprinter v0.0.0-20200109182630-33d98a066a53 // indirect
 	github.com/CloudyKit/jet/v6 v6.1.0 // indirect
+	github.com/CoderVlogger/go-web-frameworks/pkg v0.0.0-00010101000000-000000000000 // indirect
 	github.com/Shopify/goreferrer v0.0.0-20210630161223-536fa16abd6f // indirect
 	github.com/andybalholm/brotli v1.0.4 // indirect
 	github.com/aymerick/douceur v0.2.0 // indirect

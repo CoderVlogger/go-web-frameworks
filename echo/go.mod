@@ -2,7 +2,10 @@ module demoapp
 
 go 1.17
 
+replace github.com/CoderVlogger/go-web-frameworks/pkg => ../pkg
+
 require (
+	github.com/CoderVlogger/go-web-frameworks/pkg v0.0.0-00010101000000-000000000000 // indirect
 	github.com/labstack/echo/v4 v4.6.3 // indirect
 	github.com/labstack/gommon v0.3.1 // indirect
 	github.com/mattn/go-colorable v0.1.11 // indirect

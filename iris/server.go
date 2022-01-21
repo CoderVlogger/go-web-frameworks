@@ -1,9 +1,13 @@
 package main
 
-import "github.com/kataras/iris/v12"
+import (
+	"github.com/CoderVlogger/go-web-frameworks/pkg"
+
+	"github.com/kataras/iris/v12"
+)
 
 var (
-	entityStorage EntityRepository = NewEntityMemoryRepository()
+	entityStorage pkg.EntityRepository = pkg.NewEntityMemoryRepository()
 )
 
 func main() {
@@ -24,7 +28,7 @@ func listEntities(ctx iris.Context) {
 	entities, err := entityStorage.List()
 	if err != nil {
 		ctx.StatusCode(iris.StatusInternalServerError)
-		ctx.JSON(ErrorResponse{Message: err.Error()})
+		ctx.JSON(pkg.ErrorResponse{Message: err.Error()})
 		return
 	}
 
@@ -37,13 +41,13 @@ func getEntity(ctx iris.Context) {
 	entity, err := entityStorage.Get(entityID)
 	if err != nil {
 		ctx.StatusCode(iris.StatusInternalServerError)
-		ctx.JSON(ErrorResponse{Message: err.Error()})
+		ctx.JSON(pkg.ErrorResponse{Message: err.Error()})
 		return
 	}
 
 	if entity == nil {
 		ctx.StatusCode(iris.StatusNotFound)
-		ctx.JSON(ErrorResponse{Message: "entity not found"})
+		ctx.JSON(pkg.ErrorResponse{Message: "entity not found"})
 		return
 	}
 

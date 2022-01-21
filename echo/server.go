@@ -3,11 +3,13 @@ package main
 import (
 	"net/http"
 
+	"github.com/CoderVlogger/go-web-frameworks/pkg"
+
 	"github.com/labstack/echo/v4"
 )
 
 var (
-	entityStorage EntityRepository = NewEntityMemoryRepository()
+	entityStorage pkg.EntityRepository = pkg.NewEntityMemoryRepository()
 )
 
 func main() {
@@ -27,7 +29,7 @@ func main() {
 func listEntities(ctx echo.Context) error {
 	entities, err := entityStorage.List()
 	if err != nil {
-		return ctx.JSON(http.StatusInternalServerError, ErrorResponse{Message: err.Error()})
+		return ctx.JSON(http.StatusInternalServerError, pkg.ErrorResponse{Message: err.Error()})
 	}
 
 	return ctx.JSON(http.StatusOK, entities)
@@ -38,11 +40,11 @@ func getEntity(ctx echo.Context) error {
 
 	entity, err := entityStorage.Get(entityID)
 	if err != nil {
-		return ctx.JSON(http.StatusNotFound, ErrorResponse{Message: err.Error()})
+		return ctx.JSON(http.StatusNotFound, pkg.ErrorResponse{Message: err.Error()})
 	}
 
 	if entity == nil {
-		return ctx.JSON(http.StatusNotFound, ErrorResponse{Message: "entity not found"})
+		return ctx.JSON(http.StatusNotFound, pkg.ErrorResponse{Message: "entity not found"})
 	}
 
 	return ctx.JSON(http.StatusOK, entity)

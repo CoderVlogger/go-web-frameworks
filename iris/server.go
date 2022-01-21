@@ -17,6 +17,7 @@ func main() {
 	booksAPI := app.Party("/entities")
 	{
 		booksAPI.Use(iris.Compression)
+		booksAPI.Post("/", addEntity)
 		booksAPI.Get("/", listEntities)
 		booksAPI.Get("/{id}", getEntity)
 	}
@@ -24,15 +25,10 @@ func main() {
 	app.Logger().Fatal(app.Listen(":8080"))
 }
 
-func listEntities(ctx iris.Context) {
-	entities, err := entityStorage.List()
-	if err != nil {
-		ctx.StatusCode(iris.StatusInternalServerError)
-		ctx.JSON(pkg.ErrorResponse{Message: err.Error()})
-		return
-	}
+func addEntity(ctx iris.Context) {
+}
 
-	ctx.JSON(entities)
+func updateEntity(ctx iris.Context) {
 }
 
 func getEntity(ctx iris.Context) {
@@ -52,4 +48,18 @@ func getEntity(ctx iris.Context) {
 	}
 
 	ctx.JSON(entity)
+}
+
+func listEntities(ctx iris.Context) {
+	entities, err := entityStorage.List()
+	if err != nil {
+		ctx.StatusCode(iris.StatusInternalServerError)
+		ctx.JSON(pkg.ErrorResponse{Message: err.Error()})
+		return
+	}
+
+	ctx.JSON(entities)
+}
+
+func deleteEntity(ctx iris.Context) {
 }

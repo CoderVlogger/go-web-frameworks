@@ -26,13 +26,12 @@ func main() {
 	app.Logger.Fatal(app.Start(":8080"))
 }
 
-func listEntities(ctx echo.Context) error {
-	entities, err := entityStorage.List()
-	if err != nil {
-		return ctx.JSON(http.StatusInternalServerError, pkg.ErrorResponse{Message: err.Error()})
-	}
+func addEntity(ctx echo.Context) error {
+	return nil
+}
 
-	return ctx.JSON(http.StatusOK, entities)
+func updateEntity(ctx echo.Context) error {
+	return nil
 }
 
 func getEntity(ctx echo.Context) error {
@@ -48,4 +47,17 @@ func getEntity(ctx echo.Context) error {
 	}
 
 	return ctx.JSON(http.StatusOK, entity)
+}
+
+func listEntities(ctx echo.Context) error {
+	entities, err := entityStorage.List()
+	if err != nil {
+		return ctx.JSON(http.StatusInternalServerError, pkg.ErrorResponse{Message: err.Error()})
+	}
+
+	return ctx.JSON(http.StatusOK, entities)
+}
+
+func deleteEntity(ctx echo.Context) error {
+	return nil
 }

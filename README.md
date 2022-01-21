@@ -12,12 +12,21 @@ Template:
 
 | Feature | Status |
 |---------|--------|
-| CRUD Endpoints            | [ ✅ ] |
-| Docker, Kubernetes, Helm  | [ 👨🏼‍💻 ] |
-| Work with MySQL           | [ 👨🏼‍💻 ] |
-| Work with PostgreSQL      | [ 👨🏼‍💻 ] |
-| Work with MongoDB         | [ 👨🏼‍💻 ] |
-| Work with Redis           | [ 👨🏼‍💻 ] |
+| CRUD Endpoints                | [ ✅ ] |
+| File upload / Image           | [ 👨🏼‍💻 ] |
+| Auth / JWT                    | [ 👨🏼‍💻 ] |
+| Security / CORS               | [ 👨🏼‍💻 ] |
+| Optimization / GZIP           | [ 👨🏼‍💻 ] |
+| Testing / Benchmark           | [ 👨🏼‍💻 ] |
+| Documentation / Swagger       | [ 👨🏼‍💻 ] |
+| Log / Trace / Metrics         | [ 👨🏼‍💻 ] |
+| Docker / Kubernetes / Helm    | [ 👨🏼‍💻 ] |
+| Database / ORM                | [ 👨🏼‍💻 ] |
+| Work with MySQL               | [ 👨🏼‍💻 ] |
+| Work with PostgreSQL          | [ 👨🏼‍💻 ] |
+| Work with MongoDB             | [ 👨🏼‍💻 ] |
+| Work with Redis               | [ 👨🏼‍💻 ] |
+| Work with Kafka               | [ 👨🏼‍💻 ] |
 
 ### gin
 
@@ -27,24 +36,42 @@ Not started yet.
 
 | Feature | Status |
 |---------|--------|
-| CRUD Endpoints            | [ ✅ ] |
-| Docker, Kubernetes, Helm  | [ 👨🏼‍💻 ] |
-| Work with MySQL           | [ 👨🏼‍💻 ] |
-| Work with PostgreSQL      | [ 👨🏼‍💻 ] |
-| Work with MongoDB         | [ 👨🏼‍💻 ] |
-| Work with Redis           | [ 👨🏼‍💻 ] |
+| CRUD Endpoints                | [ ✅ ] |
+| File upload / Image           | [ 👨🏼‍💻 ] |
+| Auth / JWT                    | [ 👨🏼‍💻 ] |
+| Security / CORS               | [ 👨🏼‍💻 ] |
+| Optimization / GZIP           | [ 👨🏼‍💻 ] |
+| Testing / Benchmark           | [ 👨🏼‍💻 ] |
+| Documentation / Swagger       | [ 👨🏼‍💻 ] |
+| Log / Trace / Metrics         | [ 👨🏼‍💻 ] |
+| Docker / Kubernetes / Helm    | [ 👨🏼‍💻 ] |
+| Database / ORM                | [ 👨🏼‍💻 ] |
+| Work with MySQL               | [ 👨🏼‍💻 ] |
+| Work with PostgreSQL          | [ 👨🏼‍💻 ] |
+| Work with MongoDB             | [ 👨🏼‍💻 ] |
+| Work with Redis               | [ 👨🏼‍💻 ] |
+| Work with Kafka               | [ 👨🏼‍💻 ] |
 
 
 ### iris
 
 | Feature | Status |
 |---------|--------|
-| CRUD Endpoints            | [ ✅ ] |
-| Docker, Kubernetes, Helm  | [ 👨🏼‍💻 ] |
-| Work with MySQL           | [ 👨🏼‍💻 ] |
-| Work with PostgreSQL      | [ 👨🏼‍💻 ] |
-| Work with MongoDB         | [ 👨🏼‍💻 ] |
-| Work with Redis           | [ 👨🏼‍💻 ] |
+| CRUD Endpoints                | [ ✅ ] |
+| File upload / Image           | [ 👨🏼‍💻 ] |
+| Auth / JWT                    | [ 👨🏼‍💻 ] |
+| Security / CORS               | [ 👨🏼‍💻 ] |
+| Optimization / GZIP           | [ 👨🏼‍💻 ] |
+| Testing / Benchmark           | [ 👨🏼‍💻 ] |
+| Documentation / Swagger       | [ 👨🏼‍💻 ] |
+| Log / Trace / Metrics         | [ 👨🏼‍💻 ] |
+| Docker / Kubernetes / Helm    | [ 👨🏼‍💻 ] |
+| Database / ORM                | [ 👨🏼‍💻 ] |
+| Work with MySQL               | [ 👨🏼‍💻 ] |
+| Work with PostgreSQL          | [ 👨🏼‍💻 ] |
+| Work with MongoDB             | [ 👨🏼‍💻 ] |
+| Work with Redis               | [ 👨🏼‍💻 ] |
+| Work with Kafka               | [ 👨🏼‍💻 ] |
 
 ### fiber
 

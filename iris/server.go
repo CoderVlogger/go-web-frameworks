@@ -32,14 +32,14 @@ func addEntity(ctx iris.Context) {
 	err := ctx.ReadJSON(&entity)
 	if err != nil {
 		ctx.StatusCode(iris.StatusBadRequest)
-		ctx.JSON(pkg.ErrorResponse{Message: err.Error()})
+		ctx.JSON(pkg.TextResponse{Message: err.Error()})
 		return
 	}
 
 	err = entityStorage.Add(&entity)
 	if err != nil {
 		ctx.StatusCode(iris.StatusInternalServerError)
-		ctx.JSON(pkg.ErrorResponse{Message: err.Error()})
+		ctx.JSON(pkg.TextResponse{Message: err.Error()})
 		return
 	}
 
@@ -51,14 +51,14 @@ func updateEntity(ctx iris.Context) {
 	err := ctx.ReadJSON(&entity)
 	if err != nil {
 		ctx.StatusCode(iris.StatusBadRequest)
-		ctx.JSON(pkg.ErrorResponse{Message: err.Error()})
+		ctx.JSON(pkg.TextResponse{Message: err.Error()})
 		return
 	}
 
 	err = entityStorage.Update(&entity)
 	if err != nil {
 		ctx.StatusCode(iris.StatusInternalServerError)
-		ctx.JSON(pkg.ErrorResponse{Message: err.Error()})
+		ctx.JSON(pkg.TextResponse{Message: err.Error()})
 		return
 	}
 }
@@ -69,13 +69,13 @@ func getEntity(ctx iris.Context) {
 	entity, err := entityStorage.Get(entityID)
 	if err != nil {
 		ctx.StatusCode(iris.StatusInternalServerError)
-		ctx.JSON(pkg.ErrorResponse{Message: err.Error()})
+		ctx.JSON(pkg.TextResponse{Message: err.Error()})
 		return
 	}
 
 	if entity == nil {
 		ctx.StatusCode(iris.StatusNotFound)
-		ctx.JSON(pkg.ErrorResponse{Message: "entity not found"})
+		ctx.JSON(pkg.TextResponse{Message: "entity not found"})
 		return
 	}
 
@@ -86,7 +86,7 @@ func listEntities(ctx iris.Context) {
 	entities, err := entityStorage.List()
 	if err != nil {
 		ctx.StatusCode(iris.StatusInternalServerError)
-		ctx.JSON(pkg.ErrorResponse{Message: err.Error()})
+		ctx.JSON(pkg.TextResponse{Message: err.Error()})
 		return
 	}
 
@@ -99,7 +99,9 @@ func deleteEntity(ctx iris.Context) {
 	err := entityStorage.Delete(entityID)
 	if err != nil {
 		ctx.StatusCode(iris.StatusInternalServerError)
-		ctx.JSON(pkg.ErrorResponse{Message: err.Error()})
+		ctx.JSON(pkg.TextResponse{Message: err.Error()})
 		return
 	}
+
+	ctx.JSON(pkg.TextResponse{Message: "entity deleted"})
 }

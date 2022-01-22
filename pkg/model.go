@@ -1,7 +1,7 @@
 package pkg
 
 type (
-	ErrorResponse struct {
+	TextResponse struct {
 		Message string `json:"message"`
 	}
 

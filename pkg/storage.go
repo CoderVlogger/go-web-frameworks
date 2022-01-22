@@ -7,6 +7,8 @@ import (
 
 var (
 	ErrEntityAlreadyExists = fmt.Errorf("entity already exists")
+	ErrEntityIDNotProvided = fmt.Errorf("entity id not provided")
+	ErrEntityNotFound      = fmt.Errorf("entity not found")
 )
 
 type EntityRepository interface {
@@ -29,6 +31,7 @@ func NewEntityMemoryRepository() *EntityMemoryRepository {
 	}
 }
 
+// TODO: Provide a Generator interface.
 func (r *EntityMemoryRepository) Init() {
 	r.mutex.Lock()
 	defer r.mutex.Unlock()
@@ -95,6 +98,10 @@ func (r *EntityMemoryRepository) Add(entity *Entity) error {
 	r.mutex.Lock()
 	defer r.mutex.Unlock()
 
+	if entity.ID == "" {
+		entity.ID = fmt.Sprintf("%d", len(r.entities)+1)
+	}
+
 	for _, e := range r.entities {
 		if e.ID == entity.ID {
 			return ErrEntityAlreadyExists
@@ -109,6 +116,10 @@ func (r *EntityMemoryRepository) Add(entity *Entity) error {
 func (r *EntityMemoryRepository) Update(entity *Entity) error {
 	r.mutex.Lock()
 	defer r.mutex.Unlock()
+
+	if entity.ID == "" {
+		return ErrEntityIDNotProvided
+	}
 
 	for i, e := range r.entities {
 		if e.ID == entity.ID {
@@ -151,5 +162,5 @@ func (r *EntityMemoryRepository) Delete(id string) error {
 		}
 	}
 
-	return nil
+	return ErrEntityNotFound
 }

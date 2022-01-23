@@ -17,7 +17,8 @@ Template:
 | Auth / JWT                    | [ 👨🏼‍💻 ] |
 | Security / CORS               | [ 👨🏼‍💻 ] |
 | Optimization / GZIP           | [ 👨🏼‍💻 ] |
-| Testing / Benchmark           | [ 👨🏼‍💻 ] |
+| Testing                       | [ 👨🏼‍💻 ] |
+| Load testing / Benchmark      | [ 👨🏼‍💻 ] |
 | Documentation / Swagger       | [ 👨🏼‍💻 ] |
 | Log / Trace / Metrics         | [ 👨🏼‍💻 ] |
 | Docker / Kubernetes / Helm    | [ 👨🏼‍💻 ] |
@@ -41,7 +42,8 @@ Not started yet.
 | Auth / JWT                    | [ 👨🏼‍💻 ] |
 | Security / CORS               | [ 👨🏼‍💻 ] |
 | Optimization / GZIP           | [ 👨🏼‍💻 ] |
-| Testing / Benchmark           | [ 👨🏼‍💻 ] |
+| Testing                       | [ 👨🏼‍💻 ] |
+| Load testing / Benchmark      | [ 👨🏼‍💻 ] |
 | Documentation / Swagger       | [ 👨🏼‍💻 ] |
 | Log / Trace / Metrics         | [ 👨🏼‍💻 ] |
 | Docker / Kubernetes / Helm    | [ 👨🏼‍💻 ] |
@@ -62,7 +64,8 @@ Not started yet.
 | Auth / JWT                    | [ 👨🏼‍💻 ] |
 | Security / CORS               | [ 👨🏼‍💻 ] |
 | Optimization / GZIP           | [ 👨🏼‍💻 ] |
-| Testing / Benchmark           | [ 👨🏼‍💻 ] |
+| Testing                       | [ 👨🏼‍💻 ] |
+| Load testing / Benchmark      | [ 👨🏼‍💻 ] |
 | Documentation / Swagger       | [ 👨🏼‍💻 ] |
 | Log / Trace / Metrics         | [ 👨🏼‍💻 ] |
 | Docker / Kubernetes / Helm    | [ 👨🏼‍💻 ] |

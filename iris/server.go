@@ -7,6 +7,7 @@ import (
 )
 
 var (
+	pageSize                           = 4
 	entityStorage pkg.EntityRepository = pkg.NewEntityMemoryRepository()
 )
 
@@ -83,9 +84,11 @@ func getEntity(ctx iris.Context) {
 }
 
 func listEntities(ctx iris.Context) {
-	entities, err := entityStorage.List()
+	page := ctx.URLParamIntDefault("page", 1)
+
+	entities, err := entityStorage.List(page, pageSize)
 	if err != nil {
-		ctx.StatusCode(iris.StatusInternalServerError)
+		ctx.StatusCode(iris.StatusBadRequest)
 		ctx.JSON(pkg.TextResponse{Message: err.Error()})
 		return
 	}

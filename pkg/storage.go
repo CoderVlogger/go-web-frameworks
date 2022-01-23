@@ -142,11 +142,19 @@ func (r *EntityMemoryRepository) List(page, pageSize int) ([]*Entity, error) {
 	r.mutex.RLock()
 	defer r.mutex.RUnlock()
 
+	if pageSize < 1 {
+		return nil, fmt.Errorf("page size must be greater than 0")
+	}
+
 	start := (page - 1) * pageSize
+	if start < 0 || start >= len(r.entities) {
+		return nil, ErrEntityOutOfRange
+	}
+
 	end := start + pageSize
 
-	if start > len(r.entities) {
-		return nil, ErrEntityOutOfRange
+	if end > len(r.entities) {
+		return r.entities[start:], nil
 	}
 
 	return r.entities[start:end], nil

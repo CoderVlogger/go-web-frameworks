@@ -5,18 +5,12 @@ import (
 	"sync"
 )
 
-var (
-	ErrEntityAlreadyExists = fmt.Errorf("entity already exists")
-	ErrEntityIDNotProvided = fmt.Errorf("entity id not provided")
-	ErrEntityNotFound      = fmt.Errorf("entity not found")
-)
-
 type EntityRepository interface {
 	Init()
 	Add(entity *Entity) error
 	Update(entity *Entity) error
 	Get(id string) (*Entity, error)
-	List() ([]*Entity, error)
+	List(page, pageSize int) ([]*Entity, error)
 	Delete(id string) error
 }
 
@@ -144,11 +138,18 @@ func (r *EntityMemoryRepository) Get(id string) (*Entity, error) {
 	return nil, nil
 }
 
-func (r *EntityMemoryRepository) List() ([]*Entity, error) {
+func (r *EntityMemoryRepository) List(page, pageSize int) ([]*Entity, error) {
 	r.mutex.RLock()
 	defer r.mutex.RUnlock()
 
-	return r.entities, nil
+	start := (page - 1) * pageSize
+	end := start + pageSize
+
+	if start > len(r.entities) {
+		return nil, ErrEntityOutOfRange
+	}
+
+	return r.entities[start:end], nil
 }
 
 func (r *EntityMemoryRepository) Delete(id string) error {

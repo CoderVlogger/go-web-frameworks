@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"strconv"
 
 	"github.com/CoderVlogger/go-web-frameworks/pkg"
 
@@ -9,6 +10,7 @@ import (
 )
 
 var (
+	pageSize                           = 3
 	entityStorage pkg.EntityRepository = pkg.NewEntityMemoryRepository()
 )
 
@@ -73,9 +75,21 @@ func getEntity(ctx echo.Context) error {
 }
 
 func listEntities(ctx echo.Context) error {
-	entities, err := entityStorage.List()
+	var err error
+
+	page := 1
+
+	pageStr := ctx.QueryParam("page")
+	if pageStr != "" {
+		page, err = strconv.Atoi(pageStr)
+		if err != nil {
+			return ctx.JSON(http.StatusBadRequest, pkg.TextResponse{Message: err.Error()})
+		}
+	}
+
+	entities, err := entityStorage.List(page, pageSize)
 	if err != nil {
-		return ctx.JSON(http.StatusInternalServerError, pkg.TextResponse{Message: err.Error()})
+		return ctx.JSON(http.StatusBadRequest, pkg.TextResponse{Message: err.Error()})
 	}
 
 	return ctx.JSON(http.StatusOK, entities)

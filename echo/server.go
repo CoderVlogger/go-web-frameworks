@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	pageSize                           = 3
+	pageSize                           = 4
 	entityStorage pkg.EntityRepository = pkg.NewEntityMemoryRepository()
 )
 

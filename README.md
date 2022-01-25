@@ -10,24 +10,16 @@ Currently I am checking: gin, echo, iris, fiber, micro, goa, gorilla;
 
 Template:
 
-| Feature | Status |
-|---------|--------|
-| CRUD Endpoints                | [ ✅ ] |
-| File upload / Image           | [ 👨🏼‍💻 ] |
-| Auth / JWT                    | [ 👨🏼‍💻 ] |
-| Security / CORS               | [ 👨🏼‍💻 ] |
-| Optimization / GZIP           | [ 👨🏼‍💻 ] |
-| Testing                       | [ 👨🏼‍💻 ] |
-| Load testing / Benchmark      | [ 👨🏼‍💻 ] |
-| Documentation / Swagger       | [ 👨🏼‍💻 ] |
-| Log / Trace / Metrics         | [ 👨🏼‍💻 ] |
-| Docker / Kubernetes / Helm    | [ 👨🏼‍💻 ] |
-| Database / ORM                | [ 👨🏼‍💻 ] |
-| Work with MySQL               | [ 👨🏼‍💻 ] |
-| Work with PostgreSQL          | [ 👨🏼‍💻 ] |
-| Work with MongoDB             | [ 👨🏼‍💻 ] |
-| Work with Redis               | [ 👨🏼‍💻 ] |
-| Work with Kafka               | [ 👨🏼‍💻 ] |
+| Feature                       | Status | ・ | Feature                       | Status |
+|-------------------------------|------- |---|-------------------------------|--------|
+| CRUD Endpoints                | [ ✅ ] | ・ | Log / Trace / Metrics         | [ 👨🏼‍💻 ] |
+| File upload / Image           | [ 👨🏼‍💻 ] | ・ | Docker / Kubernetes / Helm    | [ 👨🏼‍💻 ] |
+| Auth / JWT                    | [ 👨🏼‍💻 ] | ・ | Database / ORM                | [ 👨🏼‍💻 ] |
+| Security / CORS               | [ 👨🏼‍💻 ] | ・ | Work with MySQL               | [ 👨🏼‍💻 ] |
+| Optimization / GZIP           | [ 👨🏼‍💻 ] | ・ | Work with PostgreSQL          | [ 👨🏼‍💻 ] |
+| Testing                       | [ 👨🏼‍💻 ] | ・ | Work with MongoDB             | [ 👨🏼‍💻 ] |
+| Load testing / Benchmark      | [ 👨🏼‍💻 ] | ・ | Work with Redis               | [ 👨🏼‍💻 ] |
+| Documentation / Swagger       | [ 👨🏼‍💻 ] | ・ | Work with Kafka               | [ 👨🏼‍💻 ] |
 
 ### gin
 

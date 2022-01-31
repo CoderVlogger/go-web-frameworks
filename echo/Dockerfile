@@ -6,7 +6,7 @@ ENV GO111MODULE=on \
     GOARCH=amd64
 WORKDIR /go/src/demoapp
 COPY . .
-RUN go build -mod vendor
+RUN go install
 
 FROM scratch
 COPY --from=builder /go/bin/demoapp .

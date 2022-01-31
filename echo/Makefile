@@ -6,5 +6,5 @@ modsync:
 
 .PHONY: docker
 docker: modsync
-	docker build -t echo-demoapp . --no-cache
+	docker build -t echo-demoapp .
 	docker run --rm -it -p 8080:8080 echo-demoapp:latest

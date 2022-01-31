@@ -13,7 +13,7 @@ Template:
 | Feature                       | Status | ・ | Feature                       | Status |
 |-------------------------------|--------|---|-------------------------------|--------|
 | CRUD Endpoints                | [ ✅ ] | ・ | Log / Trace / Metrics         | [ 👨🏼‍💻 ] |
-| File upload / Image           | [ 👨🏼‍💻 ] | ・ | Docker / Kubernetes / Helm    | [ 👨🏼‍💻 ] |
+| Form / File Upload            | [ 👨🏼‍💻 ] | ・ | Docker / Docker Compose       | [ 👨🏼‍💻 ] |
 | Auth / JWT                    | [ 👨🏼‍💻 ] | ・ | Database / ORM                | [ 👨🏼‍💻 ] |
 | Security / CORS               | [ 👨🏼‍💻 ] | ・ | Work with MySQL               | [ 👨🏼‍💻 ] |
 | Optimization / GZIP           | [ 👨🏼‍💻 ] | ・ | Work with PostgreSQL          | [ 👨🏼‍💻 ] |
@@ -30,7 +30,7 @@ Not started yet.
 | Feature                       | Status | ・ | Feature                       | Status |
 |-------------------------------|--------|---|-------------------------------|--------|
 | CRUD Endpoints                | [ ✅ ] | ・ | Log / Trace / Metrics         | [ 👨🏼‍💻 ] |
-| File upload / Image           | [ 👨🏼‍💻 ] | ・ | Docker / Kubernetes / Helm    | [ 👷🏼‍♂️ ] |
+| Form / File Upload            | [ 👨🏼‍💻 ] | ・ | Docker / Docker Compose       | [ 👷🏼‍♂️ ] |
 | Auth / JWT                    | [ 👨🏼‍💻 ] | ・ | Database / ORM                | [ 👨🏼‍💻 ] |
 | Security / CORS               | [ 👨🏼‍💻 ] | ・ | Work with MySQL               | [ 👨🏼‍💻 ] |
 | Optimization / GZIP           | [ 👨🏼‍💻 ] | ・ | Work with PostgreSQL          | [ 👨🏼‍💻 ] |
@@ -44,7 +44,7 @@ Not started yet.
 | Feature                       | Status | ・ | Feature                       | Status |
 |-------------------------------|--------|---|-------------------------------|--------|
 | CRUD Endpoints                | [ ✅ ] | ・ | Log / Trace / Metrics         | [ 👨🏼‍💻 ] |
-| File upload / Image           | [ 👨🏼‍💻 ] | ・ | Docker / Kubernetes / Helm    | [ 👷🏼‍♂️ ] |
+| Form / File Upload            | [ 👨🏼‍💻 ] | ・ | Docker / Docker Compose       | [ 👷🏼‍♂️ ] |
 | Auth / JWT                    | [ 👨🏼‍💻 ] | ・ | Database / ORM                | [ 👨🏼‍💻 ] |
 | Security / CORS               | [ 👨🏼‍💻 ] | ・ | Work with MySQL               | [ 👨🏼‍💻 ] |
 | Optimization / GZIP           | [ 👨🏼‍💻 ] | ・ | Work with PostgreSQL          | [ 👨🏼‍💻 ] |

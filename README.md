@@ -4,7 +4,7 @@ Demo web application project with every popular and recently active Go lang web 
 
 Currently I am checking: [gin](https://github.com/gin-gonic/gin), [echo](https://github.com/labstack/echo), [iris](https://github.com/kataras/iris), [fiber](https://github.com/gofiber/fiber), [micro](https://github.com/micro/micro), [goa](https://github.com/goadesign/goa), [gorilla](https://github.com/gorilla/);
 
-### 👉🏼 Learn more [Go Web Frameworks and Toolkits](https://www.codervlogger.com/)
+### 👉🏼 Learn more [Go Web Frameworks and Toolkits](https://www.codervlogger.com/go-web-frameworks-and-toolkits/)
 
 ## Progress
 

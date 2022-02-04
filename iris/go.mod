@@ -5,7 +5,7 @@ go 1.17
 replace github.com/CoderVlogger/go-web-frameworks/pkg => ../pkg
 
 require (
-	github.com/CoderVlogger/go-web-frameworks/pkg v0.0.0-00010101000000-000000000000
+	github.com/CoderVlogger/go-web-frameworks/pkg v0.0.0-20220203181310-76ddbdf1f6dd
 	github.com/kataras/iris/v12 v12.2.0-alpha5.0.20220108175433-f633ab4b99fd
 )
 

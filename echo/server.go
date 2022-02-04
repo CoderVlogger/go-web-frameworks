@@ -19,7 +19,7 @@ func main() {
 	entityStorage.Init()
 
 	app.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello, World!")
+		return c.String(http.StatusOK, "Hello, Echo!")
 	})
 
 	app.POST("/entities", addEntity)

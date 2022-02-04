@@ -15,6 +15,10 @@ func main() {
 	app := iris.New()
 	entityStorage.Init()
 
+	app.Get("/", func(ctx iris.Context) {
+		ctx.WriteString("Hello, Iris!")
+	})
+
 	booksAPI := app.Party("/entities")
 	{
 		booksAPI.Use(iris.Compression)

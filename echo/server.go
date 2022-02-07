@@ -22,6 +22,9 @@ func main() {
 		return c.String(http.StatusOK, "Hello, Echo!")
 	})
 
+	app.Static("/static", "assets")
+	app.File("/website", "assets/pages/index.html")
+
 	app.POST("/entities", addEntity)
 	app.PUT("/entities", updateEntity)
 	app.GET("/entities", listEntities)

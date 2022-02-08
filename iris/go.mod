@@ -5,7 +5,7 @@ go 1.17
 replace github.com/CoderVlogger/go-web-frameworks/pkg => ../pkg
 
 require (
-	github.com/CoderVlogger/go-web-frameworks/pkg v0.0.0-20220203181310-76ddbdf1f6dd
+	github.com/CoderVlogger/go-web-frameworks/pkg v0.0.0-20220207162710-24ad69459d6b
 	github.com/kataras/iris/v12 v12.2.0-alpha5.0.20220108175433-f633ab4b99fd
 )
 
@@ -35,7 +35,7 @@ require (
 	github.com/kataras/tunnel v0.0.3 // indirect
 	github.com/klauspost/compress v1.14.2 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
-	github.com/microcosm-cc/bluemonday v1.0.17 // indirect
+	github.com/microcosm-cc/bluemonday v1.0.18 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
@@ -46,9 +46,9 @@ require (
 	github.com/vmihailenco/msgpack/v5 v5.3.5 // indirect
 	github.com/vmihailenco/tagparser/v2 v2.0.0 // indirect
 	github.com/yosssi/ace v0.0.5 // indirect
-	golang.org/x/crypto v0.0.0-20220131195533-30dcbda58838 // indirect
+	golang.org/x/crypto v0.0.0-20220208050332-20e1d8d225ab // indirect
 	golang.org/x/net v0.0.0-20220127200216-cd36cc0744dd // indirect
-	golang.org/x/sys v0.0.0-20220128215802-99c3d69c2c27 // indirect
+	golang.org/x/sys v0.0.0-20220207234003-57398862261d // indirect
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/time v0.0.0-20211116232009-f0f3c7e86c11 // indirect
 	google.golang.org/protobuf v1.27.1 // indirect

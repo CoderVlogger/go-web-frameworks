@@ -24,6 +24,7 @@ func main() {
 
 	app.Static("/static", "assets")
 	app.File("/website", "assets/pages/index.html")
+	app.POST("/website", formSubmitEntity)
 
 	app.POST("/entities", addEntity)
 	app.PUT("/entities", updateEntity)
@@ -32,6 +33,22 @@ func main() {
 	app.DELETE("/entities/:id", deleteEntity)
 
 	app.Logger.Fatal(app.Start(":8080"))
+}
+
+func formSubmitEntity(ctx echo.Context) error {
+	entity := pkg.Entity{}
+
+	if err := ctx.Bind(&entity); err != nil {
+		return ctx.JSON(http.StatusBadRequest, pkg.TextResponse{Message: err.Error()})
+	}
+
+	if err := entityStorage.Add(&entity); err != nil {
+		return ctx.JSON(http.StatusInternalServerError, pkg.TextResponse{Message: err.Error()})
+	}
+
+	// TODO: What's the convention when we do form submit.
+	// return ctx.Redirect(http.StatusTemporaryRedirect, "/website")
+	return ctx.File("assets/pages/index.html")
 }
 
 func addEntity(ctx echo.Context) error {

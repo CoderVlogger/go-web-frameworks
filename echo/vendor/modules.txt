@@ -1,4 +1,4 @@
-# github.com/CoderVlogger/go-web-frameworks/pkg v0.0.0-00010101000000-000000000000 => ../pkg
+# github.com/CoderVlogger/go-web-frameworks/pkg v0.0.0-20220207162710-24ad69459d6b => ../pkg
 ## explicit; go 1.16
 github.com/CoderVlogger/go-web-frameworks/pkg
 # github.com/labstack/echo/v4 v4.6.3
@@ -20,7 +20,7 @@ github.com/valyala/bytebufferpool
 # github.com/valyala/fasttemplate v1.2.1
 ## explicit; go 1.12
 github.com/valyala/fasttemplate
-# golang.org/x/crypto v0.0.0-20220131195533-30dcbda58838
+# golang.org/x/crypto v0.0.0-20220208050332-20e1d8d225ab
 ## explicit; go 1.17
 golang.org/x/crypto/acme
 golang.org/x/crypto/acme/autocert
@@ -31,7 +31,7 @@ golang.org/x/net/http2
 golang.org/x/net/http2/h2c
 golang.org/x/net/http2/hpack
 golang.org/x/net/idna
-# golang.org/x/sys v0.0.0-20220128215802-99c3d69c2c27
+# golang.org/x/sys v0.0.0-20220207234003-57398862261d
 ## explicit; go 1.17
 golang.org/x/sys/internal/unsafeheader
 golang.org/x/sys/unix

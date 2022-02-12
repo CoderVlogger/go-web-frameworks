@@ -24,6 +24,13 @@ func main() {
 	app.HandleDir("/static", iris.Dir("./assets"))
 
 	app.Get("/entity-form", func(ctx iris.Context) {
+		ctx.ViewData("message", "Hello world!")
+		ctx.ViewData("testEntity", pkg.Entity{
+			ID:          "1001",
+			Type:        pkg.BookEntityType,
+			Name:        "Color",
+			Description: "Red",
+		})
 		ctx.View("entity-form.html")
 	})
 

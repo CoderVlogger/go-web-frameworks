@@ -2,6 +2,28 @@
 
 <body>
     <h3>Entity Form</h3>
+
+    <p>
+        {{.message}}
+        
+    </p>
+
+    <div>
+        <h4>Test Entity</h4>
+        <dl>
+            <dt>ID</dt>
+            <dd>{{.testEntity.ID}}</dd>
+
+            <dt>Type</dt>
+            <dd>{{.testEntity.Type}}</dd>
+            <dt>Name</dt>
+            <dd>{{.testEntity.Name}}</dd>
+            <dt>Description</dt>
+            <dd>{{.testEntity.Description}}</dd>
+
+        </dl>
+    </div>
+
     <form method="post">
         <label for="type">Type:</label>
         <input type="text" id="type" name="type" />

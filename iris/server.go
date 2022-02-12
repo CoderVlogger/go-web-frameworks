@@ -15,8 +15,16 @@ func main() {
 	app := iris.New()
 	entityStorage.Init()
 
+	tmpl := iris.HTML("./templates", ".html")
+	app.RegisterView(tmpl)
+
 	app.Get("/", func(ctx iris.Context) {
-		ctx.WriteString("Hello, Iris!")
+		ctx.ServeFile("./assets/pages/index.html")
+	})
+	app.HandleDir("/static", iris.Dir("./assets"))
+
+	app.Get("/entity-form", func(ctx iris.Context) {
+		ctx.View("entity-form.html")
 	})
 
 	booksAPI := app.Party("/entities")

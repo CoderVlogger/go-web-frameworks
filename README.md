@@ -12,7 +12,7 @@ Currently checking:
 - [fiber](https://github.com/gofiber/fiber)
 - [micro](https://github.com/micro/micro)
 - [goa](https://github.com/goadesign/goa)
-- [gorilla](https://github.com/gorilla/);
+- [gorilla](https://github.com/gorilla/)
 
 ## Related Resources
 
@@ -37,6 +37,10 @@ List of checked features:
 - Building website pages with templates;
 - MVC Pattern (model, view, controller);
 - Authentication and Authorization;
+- Documentation and Swagger;
+- Framework specific testing (if there is anything);
+- Optimization (e.g. compression with GZIP);
+- Security (CORS for example);
 
 Additionaly, some examples with:
 - Logging, tracing, and metrics;
@@ -50,52 +54,19 @@ Additionaly, some examples with:
 
 ## Current Progress
 
-### gin
+| Feature                                            | gin | echo | iris | fiber | micro | goa | gorilla |
+|----------------------------------------------------| --- | ---- | ---- | ----- | ----- | --- | ------- |
+| "Hello, World!" and simple JSON response           | ⏳  | ✅   | ✅   | ✅     | ⏳    | ⏳   | ⏳      |
+| CRUD JSON API for [the example entity][folder-pkg] | ⏳  | ✅   | ✅   | 👷🏼‍♂️     | ⏳    | ⏳   | ⏳      |
+| Paging and error handling                          | ⏳  | ✅   | ✅   | ✅     | ⏳    | ⏳   | ⏳      |
+| Parsing query params                               | ⏳  | ✅   | ✅   | ✅     | ⏳    | ⏳   | ⏳      |
+| Accepting and parsing form data                    | ⏳  | ⏳   | ⏳   | ⏳     | ⏳    | ⏳   | ⏳      |
+| Exposing static assets via an endpoint             | ⏳  | ⏳   | ⏳   | ⏳     | ⏳    | ⏳   | ⏳      |
+| Building website pages with templates              | ⏳  | ⏳   | ⏳   | ⏳     | ⏳    | ⏳   | ⏳      |
+| MVC Pattern (model, view, controller)              | ⏳  | ⏳   | ⏳   | ⏳     | ⏳    | ⏳   | ⏳      |
+| Authentication and Authorization                   | ⏳  | ⏳   | ⏳   | ⏳     | ⏳    | ⏳   | ⏳      |
 
-Not started yet.
 
-### echo
-
-| Status | Feature |
-|-|-|
-| 👨🏼‍💻 | "Hello, World!" and simple JSON response |
-| 👨🏼‍💻 | CRUD JSON API for [the example entity][folder-pkg] |
-| 👨🏼‍💻 | Paging and error handling |
-| 👨🏼‍💻 | Parsing query params |
-| 👨🏼‍💻 | Accepting and parsing form data |
-| 👨🏼‍💻 | Exposing static assets via an endpoint |
-| 👨🏼‍💻 | Building website pages with templates |
-| 👨🏼‍💻 | MVC Pattern (model, view, controller) |
-| 👨🏼‍💻 | Authentication and Authorization |
-
-### iris
-
-| Feature                       | Status | ・ | Feature                       | Status |
-|-------------------------------|--------|---|-------------------------------|--------|
-| CRUD Endpoints                | [ ✅ ] | ・ | Log / Trace / Metrics         | [ 👨🏼‍💻 ] |
-| Form / File Upload            | [ 👨🏼‍💻 ] | ・ | Docker / Docker Compose       | [ 👷🏼‍♂️ ] |
-| Auth / JWT                    | [ 👨🏼‍💻 ] | ・ | Database / ORM                | [ 👨🏼‍💻 ] |
-| Security / CORS               | [ 👨🏼‍💻 ] | ・ | Work with MySQL               | [ 👨🏼‍💻 ] |
-| Optimization / GZIP           | [ 👨🏼‍💻 ] | ・ | Work with PostgreSQL          | [ 👨🏼‍💻 ] |
-| Testing                       | [ 👨🏼‍💻 ] | ・ | Work with MongoDB             | [ 👨🏼‍💻 ] |
-| Load testing / Benchmark      | [ 👨🏼‍💻 ] | ・ | Work with Redis               | [ 👨🏼‍💻 ] |
-| Documentation / Swagger       | [ 👨🏼‍💻 ] | ・ | Work with Kafka               | [ 👨🏼‍💻 ] |
-
-### fiber
-
-Not started yet.
-
-### micro
-
-Not started yet.
-
-### goa
-
-Not started yet.
-
-### gorilla
-
-Not started yet.
 
 [folder-pkg]: https://github.com/CoderVlogger/go-web-frameworks/tree/main/pkg "Shared package"
 [codervlogger-goweb]: https://www.codervlogger.com/go-web-frameworks-and-toolkits/ "Go Web Frameworks and Toolkits"

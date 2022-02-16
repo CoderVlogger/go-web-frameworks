@@ -57,13 +57,14 @@ Additionaly, some examples with:
 
 | Feature                                            | gin | echo | iris | fiber | micro | goa | gorilla |
 |----------------------------------------------------| --- | ---- | ---- | ----- | ----- | --- | ------- |
+| Final Project Structure                            | ⏳  | ⏳   | ⏳   | ⏳     | ⏳    | ⏳   | ⏳      |
 | "Hello, World!" and simple JSON response           | ⏳  | ✅   | ✅   | ✅     | ⏳    | ⏳   | ⏳      |
 | CRUD JSON API for [the example entity][folder-pkg] | ⏳  | ✅   | ✅   | 👷🏼‍♂️     | ⏳    | ⏳   | ⏳      |
 | Paging and error handling                          | ⏳  | ✅   | ✅   | ✅     | ⏳    | ⏳   | ⏳      |
 | Parsing query params                               | ⏳  | ✅   | ✅   | ✅     | ⏳    | ⏳   | ⏳      |
-| Accepting and parsing form data                    | ⏳  | ⏳   | ⏳   | ⏳     | ⏳    | ⏳   | ⏳      |
-| Exposing static assets via an endpoint             | ⏳  | ⏳   | ⏳   | ⏳     | ⏳    | ⏳   | ⏳      |
-| Building website pages with templates              | ⏳  | ⏳   | ⏳   | ⏳     | ⏳    | ⏳   | ⏳      |
+| Accepting and parsing form data                    | ⏳  | 👷🏼‍♂️   | 👷🏼‍♂️   | ⏳     | ⏳    | ⏳   | ⏳      |
+| Exposing static assets via an endpoint             | ⏳  | ✅   | 👷🏼‍♂️   | ⏳     | ⏳    | ⏳   | ⏳      |
+| Building website pages with templates              | ⏳  | ⏳   | 👷🏼‍♂️   | ⏳     | ⏳    | ⏳   | ⏳      |
 | MVC Pattern (model, view, controller)              | ⏳  | ⏳   | ⏳   | ⏳     | ⏳    | ⏳   | ⏳      |
 | Authentication and Authorization                   | ⏳  | ⏳   | ⏳   | ⏳     | ⏳    | ⏳   | ⏳      |
 

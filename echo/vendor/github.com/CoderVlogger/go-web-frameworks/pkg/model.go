@@ -7,9 +7,9 @@ type (
 
 	Entity struct {
 		ID          string     `json:"id"`
-		Type        EntityType `json:"type"`
-		Name        string     `json:"name"`
-		Description string     `json:"description"`
+		Type        EntityType `json:"type" form:"type"`
+		Name        string     `json:"name" form:"name"`
+		Description string     `json:"description" form:"description"`
 	}
 
 	EntityType string

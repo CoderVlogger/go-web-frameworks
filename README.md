@@ -57,7 +57,7 @@ Additionaly, some examples with:
 
 | Feature                                            | gin | echo | iris | fiber | micro | goa | gorilla |
 |----------------------------------------------------| --- | ---- | ---- | ----- | ----- | --- | ------- |
-| Final Project Structure                            | ⏳  | ⏳   | ⏳   | ⏳     | ⏳    | ⏳   | ⏳      |
+| Final Project Structure                            | ⏳  | 👷🏼‍♂️   | ⏳   | ⏳     | ⏳    | ⏳   | ⏳      |
 | "Hello, World!" and simple JSON response           | ⏳  | ✅   | ✅   | ✅     | ⏳    | ⏳   | ⏳      |
 | CRUD JSON API for [the example entity][folder-pkg] | ⏳  | ✅   | ✅   | 👷🏼‍♂️     | ⏳    | ⏳   | ⏳      |
 | Paging and error handling                          | ⏳  | ✅   | ✅   | ✅     | ⏳    | ⏳   | ⏳      |

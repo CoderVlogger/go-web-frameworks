@@ -35,6 +35,7 @@ func main() {
 			// c.JSON(pkg.TextResponse{Message: err.Error()})
 			// return fiber.NewError(fiber.StatusInternalServerError, err.Error())
 
+			// TODO: Replace 500 error with 4xx for paging related errors.
 			errMsg := pkg.TextResponse{Message: err.Error()}
 			return c.Status(fiber.StatusInternalServerError).JSON(errMsg)
 		}
@@ -47,8 +48,8 @@ func main() {
 
 		entity, err := entitiesRepo.Get(entityID)
 		if err != nil {
-			c.JSON(pkg.TextResponse{Message: err.Error()})
-			return fiber.ErrInternalServerError
+			errMsg := pkg.TextResponse{Message: err.Error()}
+			return c.Status(fiber.StatusInternalServerError).JSON(errMsg)
 		}
 
 		if entity == nil {

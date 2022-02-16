@@ -59,7 +59,7 @@ Additionaly, some examples with:
 |----------------------------------------------------| --- | ---- | ---- | ----- | ----- | --- | ------- |
 | Final Project Structure                            | ⏳  | 👷🏼‍♂️   | ⏳   | ⏳     | ⏳    | ⏳   | ⏳      |
 | "Hello, World!" and simple JSON response           | ⏳  | ✅   | ✅   | ✅     | ⏳    | ⏳   | ⏳      |
-| CRUD JSON API for [the example entity][folder-pkg] | ⏳  | ✅   | ✅   | 👷🏼‍♂️     | ⏳    | ⏳   | ⏳      |
+| CRUD JSON API for [the example entity][folder-pkg] | ⏳  | ✅   | ✅   | ✅     | ⏳    | ⏳   | ⏳      |
 | Paging and error handling                          | ⏳  | ✅   | ✅   | ✅     | ⏳    | ⏳   | ⏳      |
 | Parsing query params                               | ⏳  | ✅   | ✅   | ✅     | ⏳    | ⏳   | ⏳      |
 | Accepting and parsing form data                    | ⏳  | 👷🏼‍♂️   | 👷🏼‍♂️   | ⏳     | ⏳    | ⏳   | ⏳      |

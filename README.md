@@ -43,6 +43,7 @@ List of checked features:
 - Security (CORS for example);
 
 Additionaly, some examples with:
+- CI/CD using GitHub Actions;
 - Logging, tracing, and metrics;
 - Docker and Docker Compos;
 - Database and ORM;

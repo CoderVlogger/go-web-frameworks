@@ -93,7 +93,7 @@ func (r *EntityMemoryRepository) Add(entity *Entity) error {
 	defer r.mutex.Unlock()
 
 	if entity.ID == "" {
-		entity.ID = fmt.Sprintf("%d", len(r.entities)+1)
+		entity.ID = fmt.Sprintf("%d", len(r.entities)+100)
 	}
 
 	for _, e := range r.entities {

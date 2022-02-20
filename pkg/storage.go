@@ -3,6 +3,7 @@ package pkg
 import (
 	"fmt"
 	"sync"
+	"sync/atomic"
 )
 
 type EntityRepository interface {
@@ -15,6 +16,7 @@ type EntityRepository interface {
 }
 
 type EntityMemoryRepository struct {
+	lastID   uint64
 	mutex    sync.RWMutex
 	entities []*Entity
 }
@@ -25,7 +27,6 @@ func NewEntityMemoryRepository() *EntityMemoryRepository {
 	}
 }
 
-// TODO: Provide a Generator interface.
 func (r *EntityMemoryRepository) Init() {
 	r.mutex.Lock()
 	defer r.mutex.Unlock()
@@ -86,6 +87,7 @@ func (r *EntityMemoryRepository) Init() {
 			Description: "Yesterday is a song",
 		},
 	}
+	r.lastID = 9
 }
 
 func (r *EntityMemoryRepository) Add(entity *Entity) error {
@@ -93,7 +95,8 @@ func (r *EntityMemoryRepository) Add(entity *Entity) error {
 	defer r.mutex.Unlock()
 
 	if entity.ID == "" {
-		entity.ID = fmt.Sprintf("%d", len(r.entities)+100)
+		atomic.AddUint64(&r.lastID, 1)
+		entity.ID = fmt.Sprintf("%d", r.lastID)
 	}
 
 	for _, e := range r.entities {

@@ -1,3 +1,7 @@
+.PHONY: run
+run:
+	go run .
+
 .PHONY: modsync
 modsync:
 	go get -u

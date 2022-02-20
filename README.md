@@ -26,6 +26,10 @@ Three is also a dedicated blog post where I gather all related tutorials and lea
 
 ### YouTube Playlists
 
+#### Full Tutorials
+
+- [Create CRUD JSON APIs with Fiber](https://youtu.be/oVHoMPV3ZF8)
+
 #### Video Tutorials & Short Clips
 
 - [All Go Web Framework video tutorials](https://www.youtube.com/playlist?list=PLxa49UnOmIzqf1Hqsa-Hj4pQ8R33rjdBw)

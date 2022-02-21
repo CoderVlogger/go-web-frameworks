@@ -1,6 +1,6 @@
 # API Specs
 
-This section explains API specification for `/entities` JSON API.
+This document explains API specification for `/entities` JSON API. This API is implemented in all mentioned Go Web Frameworks. Hence, the specification is required to keep them aligned and follow the same API contract.
 
 ## Endpoints
 

@@ -23,9 +23,9 @@ Currently checking:
     - [Live Streams](#install)
     - [Accompanied Blog Post](#accompanied-blog-post)
     - [YouTube Playlists](#youtube-playlists)
-    - [Full Tutorials](#full-tutorials)
-    - [Video Tutorials & Short Clips](#video-tutorials--short-clips)
-    - [Live Stream Playlists](#live-stream-playlists)
+        - [Full Tutorials](#full-tutorials)
+        - [Video Tutorials & Short Clips](#video-tutorials--short-clips)
+        - [Live Stream Playlists](#live-stream-playlists)
 
 ## Project Structure
 

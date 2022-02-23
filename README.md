@@ -14,6 +14,31 @@ Currently checking:
 - [goa](https://github.com/goadesign/goa)
 - [gorilla](https://github.com/gorilla/)
 
+## Table of Contents
+
+- [Related Resources](#related-resources)
+    - [Live Streams](#install)
+    - [Accompanied Blog Post](#accompanied-blog-post)
+    - [YouTube Playlists](#youtube-playlists)
+    - [Full Tutorials](#full-tutorials)
+    - [Video Tutorials & Short Clips](#video-tutorials--short-clips)
+    - [Live Stream Playlists](#live-stream-playlists)
+- [Features](#features)
+- [Current Progress](#current-progress)
+
+## Project Structure
+
+This repository is a monorepo, which means it contains all the packages in the same repository.
+
+In the root directory, there is a folder for each web framework. These folders contain the most recent state of the demo project for a given framework. For example, directory [fiber][folder-fiber] is the current final state of the project for the Fiber web framework.
+
+Additionally, in [_step_by_step][folder-step-by-step] and [_steps_by_topics][folder-steps-by-topics] directories, you can final tutorial steps grouped by framework and topics accordingly.
+
+Additionally,
+
+- [api][folder-api] directory contains API specifications as a README file.
+- [pkg][folder-pkg] directory contains a separate Go package used as a shared code for errors, models, and storage layer.
+
 ## Related Resources
 
 ### Live Streams
@@ -84,8 +109,11 @@ Additionaly, some examples with:
 | Authentication and Authorization                   | ⏳  | ⏳   | ⏳   | ⏳     | ⏳    | ⏳   | ⏳      |
 
 
-
+[folder-step-by-step]: https://github.com/CoderVlogger/go-web-frameworks/tree/main/_step_by_step "Tutorial steps groupped by framework"
+[folder-steps-by-topics]: https://github.com/CoderVlogger/go-web-frameworks/tree/main/_steps_by_topics "Tutorial steps groupped by topics"
+[folder-api]: https://github.com/CoderVlogger/go-web-frameworks/tree/main/api "API Specification"
 [folder-pkg]: https://github.com/CoderVlogger/go-web-frameworks/tree/main/pkg "Shared package"
+[folder-fiber]: https://github.com/CoderVlogger/go-web-frameworks/tree/main/fiber "Fiber Web Framework"
 [codervlogger-goweb]: https://www.codervlogger.com/go-web-frameworks-and-toolkits/ "Go Web Frameworks and Toolkits"
 [codervlogger-youtube-live]: https://www.youtube.com/channel/UCYsloGIkGmSzk2pw6yf6_Gw/live "YouTube"
 [codervlogger-twitch-live]: https://www.twitch.tv/codervlogger "Twitch"

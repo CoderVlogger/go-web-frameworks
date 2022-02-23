@@ -16,6 +16,9 @@ Currently checking:
 
 ## Table of Contents
 
+- [Project Structure](#project-structure)
+- [Features](#features)
+- [Current Progress](#current-progress)
 - [Related Resources](#related-resources)
     - [Live Streams](#install)
     - [Accompanied Blog Post](#accompanied-blog-post)
@@ -23,8 +26,6 @@ Currently checking:
     - [Full Tutorials](#full-tutorials)
     - [Video Tutorials & Short Clips](#video-tutorials--short-clips)
     - [Live Stream Playlists](#live-stream-playlists)
-- [Features](#features)
-- [Current Progress](#current-progress)
 
 ## Project Structure
 
@@ -38,31 +39,6 @@ Additionally,
 
 - [api][folder-api] directory contains API specifications as a README file.
 - [pkg][folder-pkg] directory contains a separate Go package used as a shared code for errors, models, and storage layer.
-
-## Related Resources
-
-### Live Streams
-
-I host live streams on [YouTube][codervlogger-youtube-live], [Twitch][codervlogger-twitch-live], and [Facebook Watch][codervlogger-facebook-live] about building this project. Follow me on [Twitter][codervlogger-twitter] for announcements.
-
-### Accompanied Blog Post
-
-Three is also a dedicated blog post where I gather all related tutorials and learning materials in one place. Learn more: [Go Web Frameworks and Toolkits][codervlogger-goweb]
-
-### YouTube Playlists
-
-#### Full Tutorials
-
-- [Create CRUD JSON APIs with Fiber](https://youtu.be/oVHoMPV3ZF8)
-
-#### Video Tutorials & Short Clips
-
-- [All Go Web Framework video tutorials](https://www.youtube.com/playlist?list=PLxa49UnOmIzqf1Hqsa-Hj4pQ8R33rjdBw)
-- [Go Fiber Web Framework video tutorials](https://www.youtube.com/playlist?list=PLxa49UnOmIzrpY75JJpEbCi5CEsUCBARG)
-
-#### Live Stream Playlists
-
-- [All Go Web Frameworks related Live Streams](https://www.youtube.com/playlist?list=PLxa49UnOmIzpLV9nSyaJ63CEYkIHR7o4S)
 
 ## Features
 
@@ -107,6 +83,32 @@ Additionaly, some examples with:
 | Building website pages with templates              | ⏳  | ⏳   | 👷🏼‍♂️   | ⏳     | ⏳    | ⏳   | ⏳      |
 | MVC Pattern (model, view, controller)              | ⏳  | ⏳   | ⏳   | ⏳     | ⏳    | ⏳   | ⏳      |
 | Authentication and Authorization                   | ⏳  | ⏳   | ⏳   | ⏳     | ⏳    | ⏳   | ⏳      |
+
+## Related Resources
+
+### Live Streams
+
+I host live streams on [YouTube][codervlogger-youtube-live], [Twitch][codervlogger-twitch-live], and [Facebook Watch][codervlogger-facebook-live] about building this project. Follow me on [Twitter][codervlogger-twitter] for announcements.
+
+### Accompanied Blog Post
+
+Three is also a dedicated blog post where I gather all related tutorials and learning materials in one place. Learn more: [Go Web Frameworks and Toolkits][codervlogger-goweb]
+
+### YouTube Playlists
+
+#### Full Tutorials
+
+- [Create CRUD JSON APIs with Fiber](https://youtu.be/oVHoMPV3ZF8)
+
+#### Video Tutorials & Short Clips
+
+- [All Go Web Framework video tutorials](https://www.youtube.com/playlist?list=PLxa49UnOmIzqf1Hqsa-Hj4pQ8R33rjdBw)
+- [Go Fiber Web Framework video tutorials](https://www.youtube.com/playlist?list=PLxa49UnOmIzrpY75JJpEbCi5CEsUCBARG)
+
+#### Live Stream Playlists
+
+- [All Go Web Frameworks related Live Streams](https://www.youtube.com/playlist?list=PLxa49UnOmIzpLV9nSyaJ63CEYkIHR7o4S)
+
 
 
 [folder-step-by-step]: https://github.com/CoderVlogger/go-web-frameworks/tree/main/_step_by_step "Tutorial steps groupped by framework"

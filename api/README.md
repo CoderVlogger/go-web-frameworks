@@ -8,31 +8,104 @@ This document explains API specification for `/entities` JSON API. This API is i
 
 List entities.
 
-### Named Params
+#### Named Params
 
-None.
+- None
 
 #### Query Params
 
 - `page` - page number
 
+#### Payload
+
+- None
+
 #### Status Codes
 
-- `404` - if the given page number does not exist
+- `404` - entity does not exist
 
-### `GET /entities/1`
+### `GET /entities/<id>`
 
 Get a single entity by entity's ID.
 
-### Named Params
+#### Named Params
 
 - `id` - id of a requested entity
 
 #### Query Params
 
-None.
+- None
+
+#### Payload
+
+- None
 
 #### Status Codes
 
-- `404` - if an entity with the specified entity id does not exist
-- `500` - if an error occurred during the storage operation
+- `404` - entity does not exist
+- `500` - unclassified internal error
+
+### `POST /entities`
+
+Add a new entity.
+
+#### Named Params
+
+- None
+
+#### Query Params
+
+- None
+
+#### Payload
+
+- Entity object
+
+#### Status Codes
+
+- `400` - invalid invalid input data (payload)
+- `404` - entity does not exist
+- `500` - unclassified internal error
+
+### `PUT /entities`
+
+Update an existing entity.
+
+#### Named Params
+
+- None
+
+#### Query Params
+
+- None
+
+#### Payload
+
+- Entity object
+
+#### Status Codes
+
+- `400` - invalid invalid input data (payload)
+- `404` - entity does not exist
+- `500` - unclassified internal error
+
+### `DELETE /entities/<id>`
+
+Delete an existing entity.
+
+#### Named Params
+
+- `id` - id of a requested entity
+
+#### Query Params
+
+- None
+
+#### Payload
+
+- Entity object
+
+#### Status Codes
+
+- `404` - entity does not exist
+- `500` - unclassified internal error

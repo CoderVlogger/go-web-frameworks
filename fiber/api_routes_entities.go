@@ -70,7 +70,7 @@ func entitiesUpdate(c *fiber.Ctx) error {
 	err := c.BodyParser(&entity)
 	if err != nil {
 		errMsg := pkg.TextResponse{Message: err.Error()}
-		return c.Status(fiber.StatusInternalServerError).JSON(errMsg)
+		return c.Status(fiber.StatusBadRequest).JSON(errMsg)
 	}
 
 	err = entitiesRepo.Update(&entity)

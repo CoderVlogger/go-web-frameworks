@@ -8,13 +8,16 @@ This document outlines the Go project structure for each demo app implementation
 
     - cmd
         - api
+            main.go
         - website
+            main.go
     - internal
         - app
-            - website
             - entities
         - pkg
             - http
                 - entities
             - storage
                 - entities
+        - website.go
+        - api.go

@@ -1,4 +1,4 @@
-package main
+package entities
 
 import (
 	"strconv"
@@ -7,14 +7,41 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-func entitiesList(c *fiber.Ctx) error {
+type Config interface {
+	GetPageSize() int
+}
+
+type entitiesHTTP struct {
+	config     Config
+	app        *fiber.App
+	repository pkg.EntityRepository // TODO: Change to app.service.
+}
+
+func New(cfg Config, app *fiber.App) *entitiesHTTP {
+	eh := &entitiesHTTP{
+		config:     cfg,
+		app:        app,
+		repository: pkg.NewEntityMemoryRepository(),
+	}
+
+	entitiesAPI := eh.app.Group("/entities")
+	entitiesAPI.Get("/", eh.List)
+	entitiesAPI.Get("/:id", eh.Get)
+	entitiesAPI.Post("/", eh.Add)
+	entitiesAPI.Put("/", eh.Update)
+	entitiesAPI.Delete("/:id", eh.Delete)
+
+	return eh
+}
+
+func (eh *entitiesHTTP) List(c *fiber.Ctx) error {
 	pageStr := c.Query("page", "1")
 	page, err := strconv.Atoi(pageStr)
 	if err != nil {
 		page = 1
 	}
 
-	entities, err := entitiesRepo.List(page, pageSize)
+	entities, err := eh.repository.List(page, eh.config.GetPageSize())
 	if err != nil {
 		// c.JSON(pkg.TextResponse{Message: err.Error()})
 		// return fiber.NewError(fiber.StatusInternalServerError, err.Error())
@@ -28,10 +55,10 @@ func entitiesList(c *fiber.Ctx) error {
 	return nil
 }
 
-func entitiesGet(c *fiber.Ctx) error {
+func (eh *entitiesHTTP) Get(c *fiber.Ctx) error {
 	entityID := c.Params("id", "")
 
-	entity, err := entitiesRepo.Get(entityID)
+	entity, err := eh.repository.Get(entityID)
 	if err != nil {
 		errMsg := pkg.TextResponse{Message: err.Error()}
 		return c.Status(fiber.StatusInternalServerError).JSON(errMsg)
@@ -45,7 +72,7 @@ func entitiesGet(c *fiber.Ctx) error {
 	return nil
 }
 
-func entitiesAdd(c *fiber.Ctx) error {
+func (eh *entitiesHTTP) Add(c *fiber.Ctx) error {
 	var entity pkg.Entity
 
 	err := c.BodyParser(&entity)
@@ -54,7 +81,7 @@ func entitiesAdd(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusInternalServerError).JSON(errMsg)
 	}
 
-	err = entitiesRepo.Add(&entity)
+	err = eh.repository.Add(&entity)
 	if err != nil {
 		errMsg := pkg.TextResponse{Message: err.Error()}
 		return c.Status(fiber.StatusInternalServerError).JSON(errMsg)
@@ -64,7 +91,7 @@ func entitiesAdd(c *fiber.Ctx) error {
 	return nil
 }
 
-func entitiesUpdate(c *fiber.Ctx) error {
+func (eh *entitiesHTTP) Update(c *fiber.Ctx) error {
 	var entity pkg.Entity
 
 	err := c.BodyParser(&entity)
@@ -73,7 +100,7 @@ func entitiesUpdate(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusBadRequest).JSON(errMsg)
 	}
 
-	err = entitiesRepo.Update(&entity)
+	err = eh.repository.Update(&entity)
 	if err != nil {
 		errMsg := pkg.TextResponse{Message: err.Error()}
 		return c.Status(fiber.StatusInternalServerError).JSON(errMsg)
@@ -83,10 +110,10 @@ func entitiesUpdate(c *fiber.Ctx) error {
 	return nil
 }
 
-func entitiesDelete(c *fiber.Ctx) error {
+func (eh *entitiesHTTP) Delete(c *fiber.Ctx) error {
 	entityID := c.Params("id", "")
 
-	err := entitiesRepo.Delete(entityID)
+	err := eh.repository.Delete(entityID)
 	if err != nil {
 		errMsg := pkg.TextResponse{Message: err.Error()}
 		return c.Status(fiber.StatusInternalServerError).JSON(errMsg)

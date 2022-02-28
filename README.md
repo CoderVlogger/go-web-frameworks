@@ -17,6 +17,7 @@ Currently checking:
 ## Table of Contents
 
 - [Project Structure](#project-structure)
+    - [Go Project Layout](#go-project-layout)
 - [Features](#features)
 - [Current Progress](#current-progress)
 - [Related Resources](#related-resources)
@@ -39,6 +40,10 @@ Additionally,
 
 - [api][folder-api] directory contains API specifications as a README file.
 - [pkg][folder-pkg] directory contains a separate Go package used as a shared code for errors, models, and storage layer.
+
+### Go Project Layout
+
+Check [STRUCTURE.md][] for information about the Go project layout for each demo app.
 
 ## Features
 
@@ -111,6 +116,7 @@ Three is also a dedicated blog post where I gather all related tutorials and lea
 
 
 
+[file-structure]: https://github.com/CoderVlogger/go-web-frameworks/tree/main/STRUCTURE.md "Go Project Layout"
 [folder-step-by-step]: https://github.com/CoderVlogger/go-web-frameworks/tree/main/_step_by_step "Tutorial steps groupped by framework"
 [folder-steps-by-topics]: https://github.com/CoderVlogger/go-web-frameworks/tree/main/_steps_by_topics "Tutorial steps groupped by topics"
 [folder-api]: https://github.com/CoderVlogger/go-web-frameworks/tree/main/api "API Specification"

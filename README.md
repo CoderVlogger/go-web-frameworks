@@ -2,7 +2,7 @@
 
 Example web application projects with top popular and recently active Go lang web frameworks and toolkits.
 
-I will implement the same features in all frameworks and compare them occasionally.
+I *am implementing* the same features in all frameworks and compare them occasionally.
 
 Currently checking:
 

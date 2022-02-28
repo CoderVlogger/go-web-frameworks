@@ -11,8 +11,8 @@ import (
 )
 
 func main() {
-	ctx, cncl := signal.NotifyContext(context.Background(), syscall.SIGINT, syscall.SIGTERM)
-	defer cncl()
+	ctx, cancel := signal.NotifyContext(context.Background(), syscall.SIGINT, syscall.SIGTERM)
+	defer cancel()
 
 	var cfg internal.Config
 

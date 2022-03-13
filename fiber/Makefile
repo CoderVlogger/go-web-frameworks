@@ -1,6 +1,6 @@
 .PHONY: run
 run:
-	go run .
+	go run cmd/demoapp/main.go
 
 .PHONY: modsync
 modsync:

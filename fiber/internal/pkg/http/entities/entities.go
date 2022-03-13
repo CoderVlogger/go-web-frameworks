@@ -18,23 +18,26 @@ type entitiesHTTP struct {
 }
 
 func New(cfg Config, app *fiber.App) *entitiesHTTP {
+	storage := pkg.NewEntityMemoryRepository()
+	// storage.Init()
+
 	eh := &entitiesHTTP{
 		config:     cfg,
 		app:        app,
-		repository: pkg.NewEntityMemoryRepository(),
+		repository: storage,
 	}
 
 	entitiesAPI := eh.app.Group("/entities")
-	entitiesAPI.Get("/", eh.List)
-	entitiesAPI.Get("/:id", eh.Get)
-	entitiesAPI.Post("/", eh.Add)
-	entitiesAPI.Put("/", eh.Update)
-	entitiesAPI.Delete("/:id", eh.Delete)
+	entitiesAPI.Get("/", eh.list)
+	entitiesAPI.Get("/:id", eh.get)
+	entitiesAPI.Post("/", eh.add)
+	entitiesAPI.Put("/", eh.update)
+	entitiesAPI.Delete("/:id", eh.delete)
 
 	return eh
 }
 
-func (eh *entitiesHTTP) List(c *fiber.Ctx) error {
+func (eh *entitiesHTTP) list(c *fiber.Ctx) error {
 	pageStr := c.Query("page", "1")
 	page, err := strconv.Atoi(pageStr)
 	if err != nil {
@@ -46,16 +49,15 @@ func (eh *entitiesHTTP) List(c *fiber.Ctx) error {
 		// c.JSON(pkg.TextResponse{Message: err.Error()})
 		// return fiber.NewError(fiber.StatusInternalServerError, err.Error())
 
-		// TODO: Replace 500 error with 4xx for paging related errors.
 		errMsg := pkg.TextResponse{Message: err.Error()}
-		return c.Status(fiber.StatusInternalServerError).JSON(errMsg)
+		return c.Status(fiber.StatusBadRequest).JSON(errMsg)
 	}
 
 	c.JSON(entities)
 	return nil
 }
 
-func (eh *entitiesHTTP) Get(c *fiber.Ctx) error {
+func (eh *entitiesHTTP) get(c *fiber.Ctx) error {
 	entityID := c.Params("id", "")
 
 	entity, err := eh.repository.Get(entityID)
@@ -72,7 +74,7 @@ func (eh *entitiesHTTP) Get(c *fiber.Ctx) error {
 	return nil
 }
 
-func (eh *entitiesHTTP) Add(c *fiber.Ctx) error {
+func (eh *entitiesHTTP) add(c *fiber.Ctx) error {
 	var entity pkg.Entity
 
 	err := c.BodyParser(&entity)
@@ -91,7 +93,7 @@ func (eh *entitiesHTTP) Add(c *fiber.Ctx) error {
 	return nil
 }
 
-func (eh *entitiesHTTP) Update(c *fiber.Ctx) error {
+func (eh *entitiesHTTP) update(c *fiber.Ctx) error {
 	var entity pkg.Entity
 
 	err := c.BodyParser(&entity)
@@ -110,7 +112,7 @@ func (eh *entitiesHTTP) Update(c *fiber.Ctx) error {
 	return nil
 }
 
-func (eh *entitiesHTTP) Delete(c *fiber.Ctx) error {
+func (eh *entitiesHTTP) delete(c *fiber.Ctx) error {
 	entityID := c.Params("id", "")
 
 	err := eh.repository.Delete(entityID)

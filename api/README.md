@@ -22,6 +22,7 @@ List entities.
 
 #### Status Codes
 
+- `400` - invalid input data (bad request)
 - `404` - entity does not exist
 
 ### `GET /entities/<id>`
@@ -63,7 +64,7 @@ Add a new entity.
 
 #### Status Codes
 
-- `400` - invalid invalid input data (payload)
+- `400` - invalid input data (bad request)
 - `404` - entity does not exist
 - `500` - unclassified internal error
 
@@ -85,7 +86,7 @@ Update an existing entity.
 
 #### Status Codes
 
-- `400` - invalid invalid input data (payload)
+- `400` - invalid input data (bad request)
 - `404` - entity does not exist
 - `500` - unclassified internal error
 

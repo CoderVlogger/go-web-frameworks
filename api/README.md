@@ -68,13 +68,13 @@ Add a new entity.
 - `404` - entity does not exist
 - `500` - unclassified internal error
 
-### `PUT /entities`
+### `PUT /entities/<id>`
 
 Update an existing entity.
 
 #### Named Params
 
-- None
+- `id` - id of a requested entity
 
 #### Query Params
 

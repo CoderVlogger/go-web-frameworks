@@ -31,7 +31,7 @@ func New(cfg Config, app *fiber.App) *entitiesHTTP {
 	entitiesAPI.Get("/", eh.list)
 	entitiesAPI.Get("/:id", eh.get)
 	entitiesAPI.Post("/", eh.add)
-	entitiesAPI.Put("/", eh.update)
+	entitiesAPI.Put("/:id", eh.update)
 	entitiesAPI.Delete("/:id", eh.delete)
 
 	return eh
@@ -94,11 +94,18 @@ func (eh *entitiesHTTP) add(c *fiber.Ctx) error {
 }
 
 func (eh *entitiesHTTP) update(c *fiber.Ctx) error {
+	entityID := c.Params("id", "")
+
 	var entity pkg.Entity
 
 	err := c.BodyParser(&entity)
 	if err != nil {
 		errMsg := pkg.TextResponse{Message: err.Error()}
+		return c.Status(fiber.StatusBadRequest).JSON(errMsg)
+	}
+
+	if entity.ID != entityID {
+		errMsg := pkg.TextResponse{Message: "Entity ID mismatch"}
 		return c.Status(fiber.StatusBadRequest).JSON(errMsg)
 	}
 

@@ -62,6 +62,10 @@ func (eh *entitiesHTTP) get(c *fiber.Ctx) error {
 	entity, err := eh.repository.Get(entityID)
 	if err != nil {
 		errMsg := pkg.TextResponse{Message: err.Error()}
+
+		if err == pkg.ErrEntityNotFound {
+			return c.Status(fiber.StatusNotFound).JSON(errMsg)
+		}
 		return c.Status(fiber.StatusInternalServerError).JSON(errMsg)
 	}
 
@@ -109,6 +113,10 @@ func (eh *entitiesHTTP) update(c *fiber.Ctx) error {
 	err = eh.repository.Update(&entity)
 	if err != nil {
 		errMsg := pkg.TextResponse{Message: err.Error()}
+
+		if err == pkg.ErrEntityNotFound {
+			return c.Status(fiber.StatusNotFound).JSON(errMsg)
+		}
 		return c.Status(fiber.StatusInternalServerError).JSON(errMsg)
 	}
 

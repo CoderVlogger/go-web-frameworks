@@ -23,7 +23,7 @@ List entities.
 #### Status Codes
 
 - `400` - invalid input data (bad request)
-- `404` - entity does not exist
+- `404` - entity not found
 
 ### `GET /entities/<id>`
 
@@ -43,7 +43,7 @@ Get a single entity by entity's ID.
 
 #### Status Codes
 
-- `404` - entity does not exist
+- `404` - entity not found
 - `500` - unclassified internal error
 
 ### `POST /entities`
@@ -65,7 +65,7 @@ Add a new entity.
 #### Status Codes
 
 - `400` - invalid input data (bad request)
-- `404` - entity does not exist
+- `404` - entity not found
 - `500` - unclassified internal error
 
 ### `PUT /entities/<id>`
@@ -87,7 +87,7 @@ Update an existing entity.
 #### Status Codes
 
 - `400` - invalid input data (bad request)
-- `404` - entity does not exist
+- `404` - entity not found
 - `500` - unclassified internal error
 
 ### `DELETE /entities/<id>`
@@ -108,5 +108,5 @@ Delete an existing entity.
 
 #### Status Codes
 
-- `404` - entity does not exist
+- `404` - entity not found
 - `500` - unclassified internal error

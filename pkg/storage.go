@@ -62,7 +62,7 @@ func (r *EntityMemoryRepository) Update(entity *Entity) error {
 		}
 	}
 
-	return nil
+	return ErrEntityNotFound
 }
 
 func (r *EntityMemoryRepository) Get(id string) (*Entity, error) {
@@ -75,7 +75,7 @@ func (r *EntityMemoryRepository) Get(id string) (*Entity, error) {
 		}
 	}
 
-	return nil, nil
+	return nil, ErrEntityNotFound
 }
 
 func (r *EntityMemoryRepository) List(page, pageSize int) ([]*Entity, error) {

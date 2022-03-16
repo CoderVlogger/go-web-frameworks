@@ -12,3 +12,16 @@ modsync:
 docker: modsync
 	docker build -t echo-demoapp .
 	docker run --rm -it -p 8080:8080 echo-demoapp:latest
+
+.PHONY: lint
+lint:
+	golangci-lint run ./...
+
+.PHONY: format
+format:
+	find . -type f -name '*.go' -not -path './vendor/*' -exec gofmt -s -w {} +
+	find . -type f -name '*.go' -not -path './vendor/*' -exec goimports -w {} +
+
+.PHONY: test
+test:
+	go test ./... -race -cover

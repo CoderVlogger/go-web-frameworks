@@ -53,8 +53,7 @@ func (eh *entitiesHTTP) list(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusBadRequest).JSON(errMsg)
 	}
 
-	c.JSON(entities)
-	return nil
+	return c.JSON(entities)
 }
 
 func (eh *entitiesHTTP) get(c *fiber.Ctx) error {
@@ -70,8 +69,7 @@ func (eh *entitiesHTTP) get(c *fiber.Ctx) error {
 		return fiber.ErrNotFound
 	}
 
-	c.JSON(entity)
-	return nil
+	return c.JSON(entity)
 }
 
 func (eh *entitiesHTTP) add(c *fiber.Ctx) error {
@@ -89,8 +87,7 @@ func (eh *entitiesHTTP) add(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusInternalServerError).JSON(errMsg)
 	}
 
-	c.JSON(entity)
-	return nil
+	return c.JSON(entity)
 }
 
 func (eh *entitiesHTTP) update(c *fiber.Ctx) error {
@@ -115,8 +112,7 @@ func (eh *entitiesHTTP) update(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusInternalServerError).JSON(errMsg)
 	}
 
-	c.JSON(entity)
-	return nil
+	return c.JSON(entity)
 }
 
 func (eh *entitiesHTTP) delete(c *fiber.Ctx) error {
@@ -128,6 +124,5 @@ func (eh *entitiesHTTP) delete(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusInternalServerError).JSON(errMsg)
 	}
 
-	c.JSON(pkg.TextResponse{Message: "entity deleted"})
-	return nil
+	return c.JSON(pkg.TextResponse{Message: "entity deleted"})
 }

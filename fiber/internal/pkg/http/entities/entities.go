@@ -19,7 +19,7 @@ type entitiesHTTP struct {
 
 func New(cfg Config, app *fiber.App) *entitiesHTTP {
 	storage := pkg.NewEntityMemoryRepository()
-	// storage.Init()
+	storage.Init()
 
 	eh := &entitiesHTTP{
 		config:     cfg,
@@ -121,6 +121,10 @@ func (eh *entitiesHTTP) delete(c *fiber.Ctx) error {
 	err := eh.repository.Delete(entityID)
 	if err != nil {
 		errMsg := pkg.TextResponse{Message: err.Error()}
+
+		if err == pkg.ErrEntityNotFound {
+			return c.Status(fiber.StatusNotFound).JSON(errMsg)
+		}
 		return c.Status(fiber.StatusInternalServerError).JSON(errMsg)
 	}
 

@@ -2,7 +2,7 @@ package internal
 
 type Config struct {
 	ServerPort int    `split_words:"true" default:"8080"`
-	ServerHost string `split_words:"true"`
+	ServerHost string `split_words:"true" default:"localhost"`
 	PageSize   int    `split_words:"true" default:"10"`
 }
 

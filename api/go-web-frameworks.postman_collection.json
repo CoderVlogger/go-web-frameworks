@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "b0767be5-f994-4900-899e-d2312d5327d6",
+		"name": "go-web-frameworks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "entity add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"person\",\n    \"name\": \"KenanBek\",\n    \"description\": \"KenanBek is a software engineer\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/entities",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"entities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "entity delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/entities/13",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"entities",
+						"13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "entity update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"1\",\n    \"type\": \"person\",\n    \"name\": \"KenanBek1\",\n    \"description\": \"KenanBek1 is a software engineer\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/entities/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"entities",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "entity get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/entities/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"entities",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "entity list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/entities?page=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"entities"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
